@@ -37,7 +37,7 @@ namespace Elma
 				int hsec = int.Parse(split.Last());
 
 				var totalHSec = hsec + sec * 100 + min * 6000;
-				if (totalHSec < 0 || totalHSec > 0xFFFF)
+				if (totalHSec < 0)
 					return false;
 				_totalHSec = totalHSec;
 			}
@@ -51,7 +51,7 @@ namespace Elma
 
 		public bool FromHSeconds(int hseconds)
 		{
-			if (hseconds < 0 || hseconds > 0xFFFF)
+			if (hseconds < 0)
 				return false;
 			_totalHSec = hseconds;
 			return true;
